@@ -144,3 +144,28 @@ filter_student = list(filter(lambda x: x['grade'] > 50, students))
 sum = reduce(lambda x, y: x+y, filter(lambda x: x> 2000 ,map(lambda x: x['grade'] ** 2, filter_student)))
 print(sum)
 
+
+# TO DO
+
+# Filter, Map, and Reduce: Sum of Squared Positives
+#
+# Given a list of integers, filter out the non-positive numbers, square the remaining positive numbers, and then find their sum.
+# numbers = [-1, 2, -3, 4, -5, 6]
+# Expected Output: 56 (2^2 + 4^2 + 6^2)
+# Map, Filter, and Any: Check if Any Transformed Value Exceeds Threshold
+#
+# Given a list of integers, double each number, filter out those less than 10, and check if any of the remaining numbers exceed a threshold.
+# numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+# threshold = 15
+# Expected Output: True
+# Zip, Filter, and All: Pair Positive Elements and Check Conditions
+#
+# Given two lists of integers, pair the elements using zip, filter out pairs where any element is non-positive, and check if all pairs have both elements greater than 5.
+# list1 = [1, 6, 3, 8]
+# list2 = [5, 7, 2, 9]
+# Expected Output: False
+# Map, Filter, and Reduce: Concatenate and Transform Strings
+#
+# Given a list of strings, filter out strings that do not start with a vowel, convert the remaining strings to uppercase, and concatenate them into a single string.
+# words = ["apple", "banana", "orange", "umbrella", "kiwi"]
+# Expected Output: "APPLEORANGEUMBRELLA"
