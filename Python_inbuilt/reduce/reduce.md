@@ -50,3 +50,27 @@ product = reduce(lambda x, y: x * y, numbers)
 print(product)  # Output: 24
 
 ````
+
+## NOTE:
+
+**reduce** works by taking two arguments and applying a function cumulatively to reduce a list to a single value. Meanwhile, **map** generally takes a single argument function and applies it to each element of an iterable independently. When map is used with multiple iterables, the function can take as many arguments as there are iterables.
+
+```python
+from functools import reduce
+
+numbers = [1, 2, 3, 4, 5]
+sum_result = reduce(lambda x, y: x + y, numbers)
+print(sum_result)  # Output: 15
+
+
+numbers = [1, 2, 3, 4, 5]
+squared_numbers = list(map(lambda x: x ** 2, numbers))
+print(squared_numbers)  # Output: [1, 4, 9, 16, 25]
+
+
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+sum_lists = list(map(lambda x, y: x + y, list1, list2))
+print(sum_lists)  # Output: [5, 7, 9]
+
+```
