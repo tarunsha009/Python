@@ -61,7 +61,7 @@ print(list(perms))
 
 
 5. combinations(iterable, r)
-Generates all possible combinations of an iterable’s elements of length r.
+Generates all possible combinations of an iterable’s elements of length r. Here size matters and it will generate the combination of that length only. 
 
 Example:
 
@@ -71,6 +71,18 @@ import itertools
 combs = itertools.combinations([1, 2, 3, 4], 2)
 print(list(combs))
 # Output: [(1, 2), (1, 3), (1, 4), (2, 3), (2, 4), (3, 4)]
+```
+
+now suppose you want to generate the combination like: (1,) (2,) (3,) (4,) (1, 2) (1, 3) (1, 4) (2, 3) (2, 4) (3, 4)
+then you will need to use the for loop or similar logic: 
+
+```python
+import itertools
+max_size = 2
+s = [1, 2, 3, 4]
+for size in range(1, max_size + 1):
+    for comb in itertools.combinations(s, size):
+        print(comb)
 ```
 
 6. product(*iterables, repeat=1)
