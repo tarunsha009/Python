@@ -1,5 +1,3 @@
-Great! Next up, we'll dive into the `Counter` class from the `collections` module. Here’s a detailed overview, examples, and practice problems.
-
 ### **`Counter` Overview**
 
 #### **What is `Counter`?**
