@@ -11,3 +11,4 @@ class DoublyLinkedList:
         if self.head:
             self.head.prev = newNode
         return newNode
+
