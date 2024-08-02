@@ -141,6 +141,9 @@ In this example, two `Person` objects are considered equal if their `name` and `
 
     print(len(people))  # 1, because p1 and p2 are considered equal
     ```
+   You might be wondering why i need override the __hash__ method.
+   
+   By default, user-defined classes in Python inherit __eq__ and __hash__ methods from the base object class. These default methods use the identity of the objects (their memory addresses) for equality and hashing. Therefore, if you don't override these methods, the default behavior is to compare objects based on their memory addresses and to use their memory addresses to compute hash values.
 
 3. **Comparing Different Attributes**:
    - Customize the comparison to check specific attributes or a combination of attributes based on the requirements.
@@ -162,6 +165,54 @@ In this example, two `Person` objects are considered equal if their `name` and `
 
     print(emp1 == emp2)  # True
     ```
+## Important Point
+Before I end this tutorial, you might be wondering that if I need to compare the object I can do the following as well: 
+
+```python
+def equalityCheck(p1, p2):
+    return p1.name == p2.name and p1.age == p2.age
+```
+
+However, there are several reasons why overriding `__eq__` and `__hash__` methods in a class is beneficial:
+
+### 1. **Integration with Built-in Data Structures**
+
+When you override `__eq__` and `__hash__`, your objects become compatible with Python's built-in data structures like sets and dictionaries:
+
+- **Sets**: Sets rely on `__hash__` to quickly check if an item already exists. If you don’t override `__hash__`, you can't add your custom objects to a set or will encounter a `TypeError`.
+- **Dictionaries**: Dictionaries use `__hash__` to index and store keys. Custom objects used as dictionary keys must have consistent hash values and proper equality checks.
+
+### 2. **Code Simplicity and Readability**
+
+Overriding `__eq__` allows you to use the `==` operator directly for comparisons, which is more readable and idiomatic than calling a custom method. It keeps comparisons intuitive:
+
+```python
+if obj1 == obj2:
+    print("Objects are equal")
+```
+
+vs.
+
+```python
+if equalityCheck(obj1, obj2):
+    print("Objects are equal")
+```
+
+### 3. **Consistency and Maintainability**
+
+When you override `__eq__` and `__hash__`, you define equality and hashing rules in a single place within your class. This centralization makes your code easier to maintain and less error-prone, especially when you need to use these objects in various parts of your code.
+
+### 4. **Interoperability with Libraries and Frameworks**
+
+Many libraries and frameworks expect classes to implement `__eq__` and `__hash__` for proper operation. For example, many Python libraries use sets or dictionaries internally to manage collections of objects. Implementing these methods ensures your objects interact seamlessly with such libraries.
+
+### 5. **Custom Comparison Logic**
+
+By overriding `__eq__`, you can implement custom logic for what it means for two objects to be considered equal, beyond just comparing their attributes. This can be important if you want equality to depend on specific conditions or combinations of attributes.
+
+
+In summary, overriding `__eq__` and `__hash__` makes your objects more integrated with Python's standard library, more readable, and more maintainable. It aligns with Python's design principles and allows for more idiomatic and flexible code.
+
 
 ### Summary
 
