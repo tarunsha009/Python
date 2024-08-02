@@ -141,6 +141,9 @@ In this example, two `Person` objects are considered equal if their `name` and `
 
     print(len(people))  # 1, because p1 and p2 are considered equal
     ```
+   You might be wondering why i need override the __hash__ method.
+   
+   By default, user-defined classes in Python inherit __eq__ and __hash__ methods from the base object class. These default methods use the identity of the objects (their memory addresses) for equality and hashing. Therefore, if you don't override these methods, the default behavior is to compare objects based on their memory addresses and to use their memory addresses to compute hash values.
 
 3. **Comparing Different Attributes**:
    - Customize the comparison to check specific attributes or a combination of attributes based on the requirements.
