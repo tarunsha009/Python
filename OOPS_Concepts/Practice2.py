@@ -26,11 +26,11 @@ class Person:
 
     def __eq__(self, other):
         if isinstance(other, Person):
-            return (self.name, self.age, self.address) == (other.name, other.age, other.address)
+            return (self.age) == (other.age)
         return False
 
     def __hash__(self):
-        return hash((self.name, self.age, self.address))
+        return hash((self.age))
 
     def __lt__(self, other):
         if isinstance(other, Person):
