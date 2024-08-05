@@ -4,10 +4,16 @@ In this section, we will prepare for object-oriented programming (OOP) and relat
 
 1. Object Equality and Identity
 2. Custom Comparison Methods
-3. Class Methods and Static Methods
-4. Inheritance and Polymorphism
-5. Encapsulation and Data Hiding
-6. Special Methods and Operator Overloading
+3. Decorators
+4. Iterators and Generators
+5. Context Managers
+6. Modules and Packages
+7. Exception Handling
+8. Memory Management
+9. Class Methods and Static Methods
+10. Inheritance and Polymorphism
+11. Encapsulation and Data Hiding
+12. Special Methods and Operator Overloading
 
 ### Object Equality and Identity
 
