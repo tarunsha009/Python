@@ -1,2 +1,2 @@
 "# Python" 
-practice python
+practice python and object oriented concepts
